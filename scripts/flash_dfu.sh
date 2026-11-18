@@ -3,7 +3,7 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "$0")" && pwd)"
 REPO_DIR="$(cd "${SCRIPT_DIR}/.." && pwd)"
-BIN_PATH="${1:-${REPO_DIR}/firmware/releases/nuphy_air75_v2_ansi_via_custom.bin}"
+BIN_PATH="${1:-${REPO_DIR}/firmware/releases/nuphy_air75_v2_ansi_battery.bin}"
 
 if [ ! -f "${BIN_PATH}" ]; then
   echo "Firmware binary not found: ${BIN_PATH}" >&2

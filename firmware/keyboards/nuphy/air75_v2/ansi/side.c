@@ -48,14 +48,6 @@ uint8_t side_play_cnt       = 0;
 uint32_t side_play_timer    = 0;
 uint8_t r_temp, g_temp, b_temp;
 rgb_led_t side_leds[SIDE_LED_NUM] = {0};
-bool    side_custom_left_enable  = false;
-uint8_t side_custom_left_r       = 0;
-uint8_t side_custom_left_g       = 128;
-uint8_t side_custom_left_b       = 255;
-bool    side_custom_right_enable = false;
-uint8_t side_custom_right_r      = 0;
-uint8_t side_custom_right_g      = 255;
-uint8_t side_custom_right_b      = 128;
 
 const uint8_t side_speed_table[5][5] = {
     [SIDE_WAVE]   = {10, 14, 20, 28, 38}, //
@@ -942,13 +934,6 @@ void side_led_show(void) {
         case SIDE_OFF:
             side_off_mode_show();
             break;
-    }
-
-    if (side_custom_left_enable) {
-        set_left_rgb(side_custom_left_r, side_custom_left_g, side_custom_left_b);
-    }
-    if (side_custom_right_enable) {
-        set_right_rgb(side_custom_right_r, side_custom_right_g, side_custom_right_b);
     }
 
     bat_led_show();
